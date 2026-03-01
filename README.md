@@ -1,5 +1,4 @@
 # LLMs as Gym Agents
-
 **Can large language models actively solve reinforcement learning environments?**
 
 This project explores whether an LLM can function as a policy inside classic Gym environments, without reinforcement learning, gradient updates, or weight training. Instead of updating parameters, the LLM reasons over context and episode history to choose actions.
@@ -36,16 +35,15 @@ At every timestep, the LLM receives the current observation, the episode history
 
 **CartPole** works surprisingly well. The control law is naturally verbalizable ("if the pole leans right, move right") and LLMs are good at executing structured rules expressed in language.
 
-**FrozenLake** fails under pure reward feedback but succeeds when given the full transition function. When the LLM knows exactly where each action leads, it can plan. Without that, sparse rewards provide too weak a signal for incontext reasoning to recover from.
+**FrozenLake** fails under pure reward feedback but succeeds when given the full transition function. When the LLM knows exactly where each action leads, it can plan. Without that, sparse rewards provide too weak a signal for in-context reasoning to recover from.
 
-**LunarLander** is the hard case. The dynamics are too continuous and high dimensional for natural language reasoning to reliably track without structured state summaries.
+**LunarLander** is the hard case. The dynamics are too continuous and high-dimensional for natural language reasoning to reliably track without structured state summaries.
 
 ---
 
 ## What This Tells Us
 
 LLMs can approximate policies in environments where the optimal behavior is **describable in language** and feedback is **dense enough to reason about**. They break down where dynamics are continuous, rewards are sparse, or multi-step credit assignment is required.
-
 
 ---
 
@@ -54,7 +52,28 @@ LLMs can approximate policies in environments where the optimal behavior is **de
 ```
 ├── cartpole_agent.py
 ├── frozenlake_agent.py
-└── lunarlander_agent.py
+├── lunarlander_agent.py
+├── .env.example
+└── .env              # your local credentials, not committed
+```
+
+---
+
+## Setup
+
+Copy `.env.example` to `.env` and add your API key:
+
+```bash
+cp .env.example .env
+```
+
+`.env.example`:
+```
+# OpenRouter API Configuration
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+
+# Model to use (optional, has default value)
+MODEL=openai/gpt-4.1-nano
 ```
 
 ---
@@ -65,6 +84,7 @@ LLMs can approximate policies in environments where the optimal behavior is **de
 gymnasium
 openai
 numpy
+python-dotenv
 ```
 
 ---
