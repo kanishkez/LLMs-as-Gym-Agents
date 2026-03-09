@@ -3,6 +3,8 @@
 
 This project explores whether an LLM can function as a policy inside classic Gym environments, without reinforcement learning, gradient updates, or weight training. Instead of updating parameters, the LLM reasons over context and episode history to choose actions.
 
+blog on this: https://kanishkk.substack.com/p/can-llms-solve-gym-environments
+
 ---
 
 ## Motivation
