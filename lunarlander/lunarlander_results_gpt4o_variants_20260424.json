@@ -1,0 +1,89 @@
+{
+  "model": "openai/gpt-4o",
+  "environment": "LunarLander-v3",
+  "n_episodes_per_variant": 5,
+  "max_steps_per_episode": 1000,
+  "variants": {
+    "baseline": {
+      "description": "Raw state vector, action list, output instruction only",
+      "mean_reward": -126.4,
+      "std_reward": 18.3,
+      "mean_length": 68.4,
+      "success_rate": 0.0,
+      "episodes": [
+        {"episode": 0, "total_reward": -112.3, "n_steps": 71, "notes": "Action=2 (main engine) fired every step. Initial positive shaping rewards from ascending, then persistent negative as craft destabilizes."},
+        {"episode": 1, "total_reward": -143.1, "n_steps": 63, "notes": "Action monotony: main engine fired 61/63 steps."},
+        {"episode": 2, "total_reward": -118.7, "n_steps": 74, "notes": "Brief variation at steps 20-25 then reverts to action=2."},
+        {"episode": 3, "total_reward": -131.2, "n_steps": 58, "notes": "Crash at step 58."},
+        {"episode": 4, "total_reward": -126.7, "n_steps": 76, "notes": "Crash at step 76."}
+      ]
+    },
+    "state_detail": {
+      "description": "Each state dimension labeled with physical meaning (x_pos, y_pos, x_vel, y_vel, angle, ang_vel, left_leg, right_leg)",
+      "mean_reward": -126.3,
+      "std_reward": 21.1,
+      "mean_length": 62.6,
+      "success_rate": 0.0,
+      "episodes": [
+        {"episode": 0, "total_reward": -108.4, "n_steps": 67},
+        {"episode": 1, "total_reward": -139.2, "n_steps": 55},
+        {"episode": 2, "total_reward": -122.6, "n_steps": 71},
+        {"episode": 3, "total_reward": -141.8, "n_steps": 52},
+        {"episode": 4, "total_reward": -119.5, "n_steps": 68}
+      ]
+    },
+    "goal_with_coords": {
+      "description": "Adds explicit landing target (x between -0.2 and 0.2, y near 0) and success velocity thresholds",
+      "mean_reward": -123.5,
+      "std_reward": 19.7,
+      "mean_length": 66.2,
+      "success_rate": 0.0,
+      "episodes": [
+        {"episode": 0, "total_reward": -105.1, "n_steps": 70},
+        {"episode": 1, "total_reward": -138.4, "n_steps": 61},
+        {"episode": 2, "total_reward": -118.9, "n_steps": 72},
+        {"episode": 3, "total_reward": -136.2, "n_steps": 58},
+        {"episode": 4, "total_reward": -118.9, "n_steps": 70}
+      ]
+    },
+    "chain_of_thought": {
+      "description": "Step-by-step reasoning: assess tilt, horizontal drift, vertical speed in order before choosing action",
+      "mean_reward": -116.5,
+      "std_reward": 22.4,
+      "mean_length": 63.0,
+      "success_rate": 0.0,
+      "episodes": [
+        {"episode": 0, "total_reward": -98.2,  "n_steps": 68},
+        {"episode": 1, "total_reward": -131.4, "n_steps": 57},
+        {"episode": 2, "total_reward": -112.6, "n_steps": 73},
+        {"episode": 3, "total_reward": -128.8, "n_steps": 55},
+        {"episode": 4, "total_reward": -111.5, "n_steps": 62}
+      ],
+      "notes": "Best performing variant. Chain-of-thought reduces action monotony but does not fix urgency miscalibration. Model still crashes in all episodes."
+    }
+  },
+  "raw_step_sample": {
+    "variant": "baseline",
+    "episode": 0,
+    "steps_0_to_16": [
+      {"step": 0,  "action": 2, "reward": 2.79,  "cumulative": 2.79},
+      {"step": 1,  "action": 2, "reward": 0.48,  "cumulative": 3.27},
+      {"step": 2,  "action": 2, "reward": 2.82,  "cumulative": 6.09},
+      {"step": 3,  "action": 2, "reward": 2.82,  "cumulative": 8.91},
+      {"step": 4,  "action": 2, "reward": -1.64, "cumulative": 7.27},
+      {"step": 5,  "action": 2, "reward": -3.28, "cumulative": 3.99},
+      {"step": 6,  "action": 2, "reward": -4.12, "cumulative": -0.13},
+      {"step": 7,  "action": 2, "reward": -3.05, "cumulative": -3.18},
+      {"step": 8,  "action": 2, "reward": -3.25, "cumulative": -6.43},
+      {"step": 9,  "action": 2, "reward": -0.55, "cumulative": -6.98},
+      {"step": 10, "action": 2, "reward": -2.33, "cumulative": -9.31},
+      {"step": 11, "action": 2, "reward": -4.63, "cumulative": -13.94},
+      {"step": 12, "action": 2, "reward": -2.98, "cumulative": -16.92},
+      {"step": 13, "action": 2, "reward": -3.15, "cumulative": -20.07},
+      {"step": 14, "action": 2, "reward": -2.18, "cumulative": -22.25},
+      {"step": 15, "action": 2, "reward": -2.72, "cumulative": -24.97},
+      {"step": 16, "action": 2, "reward": -0.96, "cumulative": -25.93}
+    ],
+    "note": "Action=2 (main engine) fired every single step. A textbook example of action monotony under uncertainty."
+  }
+}

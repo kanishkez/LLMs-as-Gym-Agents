@@ -1,0 +1,779 @@
+{
+  "log_type": "cartpole_experiment",
+  "source_file": "experiment_log_20260424_115502.txt",
+  "started_at": "2026-04-24T11:55:02.118281",
+  "model_name": "llama-3.3-70b",
+  "model_id": "meta/llama-3.3-70b-instruct",
+  "provider": "NVIDIA NIM",
+  "environment": "CartPole-v1",
+  "n_episodes": 3,
+  "episodes": [
+    {
+      "episode": 0,
+      "steps": [
+        {
+          "step": 0,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 1.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 1,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 2.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 2,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 3.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 3,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 4.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 4,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 5.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 5,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 6.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 6,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 7.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 7,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 8.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 8,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 9.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 9,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 10.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 10,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 11.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 11,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 12.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 12,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 13.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 13,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 14.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 14,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 15.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 15,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 16.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 16,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 17.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 17,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 18.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 18,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 19.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 19,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 20.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 20,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 21.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 21,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 22.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 22,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 23.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 23,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 24.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 24,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 25.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 25,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 26.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 26,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 27.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 27,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 28.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 28,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 29.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 29,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 30.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 30,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 31.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 31,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 32.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 32,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 33.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 33,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 34.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 34,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 35.0,
+          "raw_response": "0"
+        }
+      ],
+      "n_steps": 35,
+      "total_reward": 35.0
+    },
+    {
+      "episode": 1,
+      "steps": [
+        {
+          "step": 0,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 1.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 1,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 2.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 2,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 3.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 3,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 4.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 4,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 5.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 5,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 6.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 6,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 7.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 7,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 8.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 8,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 9.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 9,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 10.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 10,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 11.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 11,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 12.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 12,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 13.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 13,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 14.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 14,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 15.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 15,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 16.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 16,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 17.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 17,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 18.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 18,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 19.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 19,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 20.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 20,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 21.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 21,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 22.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 22,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 23.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 23,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 24.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 24,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 25.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 25,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 26.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 26,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 27.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 27,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 28.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 28,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 29.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 29,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 30.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 30,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 31.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 31,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 32.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 32,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 33.0,
+          "raw_response": "1"
+        }
+      ],
+      "n_steps": 33,
+      "total_reward": 33.0
+    },
+    {
+      "episode": 2,
+      "steps": [
+        {
+          "step": 0,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 1.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 1,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 2.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 2,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 3.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 3,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 4.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 4,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 5.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 5,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 6.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 6,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 7.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 7,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 8.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 8,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 9.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 9,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 10.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 10,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 11.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 11,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 12.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 12,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 13.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 13,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 14.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 14,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 15.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 15,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 16.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 16,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 17.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 17,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 18.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 18,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 19.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 19,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 20.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 20,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 21.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 21,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 22.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 22,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 23.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 23,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 24.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 24,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 25.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 25,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 26.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 26,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 27.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 27,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 28.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 28,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 29.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 29,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 30.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 30,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 31.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 31,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 32.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 32,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 33.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 33,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 34.0,
+          "raw_response": "1"
+        },
+        {
+          "step": 34,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 35.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 35,
+          "action": 0,
+          "reward": 1.0,
+          "cumulative_reward": 36.0,
+          "raw_response": "0"
+        },
+        {
+          "step": 36,
+          "action": 1,
+          "reward": 1.0,
+          "cumulative_reward": 37.0,
+          "raw_response": "1"
+        }
+      ],
+      "n_steps": 37,
+      "total_reward": 37.0
+    }
+  ],
+  "summary": {
+    "episode_lengths": [
+      35,
+      33,
+      37
+    ],
+    "mean_length": 35.0,
+    "solved_500_steps": 0,
+    "success_rate_500_steps": 0.0
+  },
+  "summary_text": "SUMMARY: llama-3.3-70b on CartPole-v1\n  Episode lengths: 35, 33, 37\n  Mean length: 35.0\n  Solved (500 steps): 0/3\n  Note: Model switches between 0 and 1 coherently, responding to pole angle.\n  Fails before 40 steps in all episodes. A precision failure not a comprehension failure\n  -- the switching pattern is correct, the timing is slightly off.\n======================================================================"
+}

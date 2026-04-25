@@ -1,0 +1,5 @@
+gymnasium==1.1.1
+gymnasium[box2d]==1.1.1
+openai==1.75.0
+numpy==1.26.4
+python-dotenv==1.0.1

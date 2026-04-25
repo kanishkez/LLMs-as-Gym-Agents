@@ -1,102 +1,106 @@
 # LLMs as Gym Agents
-**Can large language models actively solve reinforcement learning environments?**
 
-This project explores whether an LLM can function as a policy inside classic Gym environments, without reinforcement learning, gradient updates, or weight training. Instead of updating parameters, the LLM reasons over context and episode history to choose actions.
+Testing whether large language models can act as policies in Gymnasium environments, without RL training, gradient updates, or value-function learning.
 
-blog on this: https://kanishkk.substack.com/p/can-llms-solve-gym-environments
+At each timestep, the model gets the current observation and local trajectory context, then outputs an action. This repo supports the CAISc 2026 paper experiments across three environments.
 
----
-
-## Motivation
-
-Traditional RL agents learn via gradient descent, update value functions, and improve across episodes. LLMs do none of this. They don't update weights, don't accumulate value estimates, and only reason over what's inside the context window.
-
-So the question becomes: **can reasoning alone simulate reinforcement learning behavior?**
+Blog post: https://kanishkk.substack.com/p/can-llms-solve-gym-environments
+Paper: *Can LLMs Act as RL Agents?* (CAISc 2026)
 
 ---
 
 ## Environments
 
-Three Gymnasium environments of increasing difficulty:
+- `cartpole/` for `CartPole-v1`
+- `frozenlake/` for `FrozenLake-v1`
+- `lunarlander/` for `LunarLander-v3`
 
-**CartPole-v1** — dense reward, simple feedback control, discrete actions (left/right)
-
-**FrozenLake-v1** — sparse reward, multi-step planning, grid-based navigation
-
-**LunarLander-v3** — continuous dynamics, multi-variable control, long-horizon stabilization
-
----
-
-## Experimental Setup
-
-At every timestep, the LLM receives the current observation, the episode history, a goal description, and the available action space. It outputs a single action. There is no gradient descent, no policy update, no training between episodes, just zero-shot decision making at each step.
-
----
-
-## Key Findings
-
-**CartPole** works surprisingly well. The control law is naturally verbalizable ("if the pole leans right, move right") and LLMs are good at executing structured rules expressed in language.
-
-**FrozenLake** fails under pure reward feedback but succeeds when given the full transition function. When the LLM knows exactly where each action leads, it can plan. Without that, sparse rewards provide too weak a signal for in-context reasoning to recover from.
-
-**LunarLander** is the hard case. The dynamics are too continuous and high-dimensional for natural language reasoning to reliably track without structured state summaries.
-
----
-
-## What This Tells Us
-
-LLMs can approximate policies in environments where the optimal behavior is **describable in language** and feedback is **dense enough to reason about**. They break down where dynamics are continuous, rewards are sparse, or multi-step credit assignment is required.
-
----
-
-## Structure
-
-```
-├── cartpole_agent.py
-├── frozenlake_agent.py
-├── lunarlander_agent.py
-├── .env.example
-└── .env              # your local credentials, not committed
-```
+Each environment has its own folder with agent code and experiment artifacts.
 
 ---
 
 ## Setup
 
-Copy `.env.example` to `.env` and add your API key:
-
 ```bash
+pip install -r requirements.txt
 cp .env.example .env
 ```
 
-`.env.example`:
-```
-# OpenRouter API Configuration
-OPENROUTER_API_KEY=your_openrouter_api_key_here
+Add API keys in `.env`:
 
-# Model to use (optional, has default value)
-MODEL=openai/gpt-4.1-nano
-```
+- `OPENROUTER_API_KEY` for OpenRouter-backed runs (for example GPT-4o)
+- `NVIDIA_API_KEY` for NVIDIA NIM-backed runs (Llama, DeepSeek, Qwen, Mistral, etc.)
 
 ---
 
-## Requirements
-
-```
-gymnasium
-openai
-numpy
-python-dotenv
-```
-
----
-
-## Usage
+## Run Single-Environment Agents
 
 ```bash
-python cartpole_agent.py
-python frozenlake_agent.py
-python lunarlander_agent.py
+python cartpole/cartpole_agent.py
+python frozenlake/frozenlake_agent.py
+python lunarlander/lunarlander_agent.py
 ```
 
 ---
+
+## Run Multi-Model Experiments
+
+```bash
+python multi_model_runner.py
+```
+
+Configure `MODELS_TO_RUN` and `ENVS_TO_RUN` near the bottom of `multi_model_runner.py`.
+
+---
+
+## Experiment Logs (JSON)
+
+### CartPole
+
+- `cartpole/cartpole_experiment_log_llama33_20260424_115502.json`
+  - Converted from the original text log.
+  - Includes per-step actions/rewards for 3 episodes and summary stats.
+
+### FrozenLake
+
+- `frozenlake/frozenlake_results_gpt4o_coordinate_enriched_20260424.json`
+  - GPT-4o, 20 episodes, coordinate-enriched prompt.
+  - 0% success with coordinate-only world context.
+
+### LunarLander
+
+- `lunarlander/lunarlander_results_gpt4o_variants_20260424.json`
+  - GPT-4o across four prompt variants (baseline, state detail, goal with coords, chain-of-thought).
+- `lunarlander/lunarlander_experiment_log_llama33_reasoning_20260424_121532.json`
+  - Converted from the original reasoning trace text log.
+  - Includes parsed step-level telemetry and reasoning segments.
+
+---
+
+## Key Findings (Paper-Aligned)
+
+- CartPole can be solved with strong structured prompting on top-tier models; weaker/open models plateau much lower.
+- FrozenLake fails without transition knowledge and improves with explicit path/world-model hints.
+- LunarLander remains unsolved across tested zero-shot variants; reasoning traces show a deliberation-reaction gap (under-urgent control decisions in continuous dynamics).
+
+---
+
+## Repo Layout
+
+```text
+.
+├── cartpole/
+│   ├── cartpole_agent.py
+│   └── cartpole_experiment_log_llama33_20260424_115502.json
+├── frozenlake/
+│   ├── frozenlake_agent.py
+│   └── frozenlake_results_gpt4o_coordinate_enriched_20260424.json
+├── lunarlander/
+│   ├── lunarlander_agent.py
+│   ├── lunarlander_results_gpt4o_variants_20260424.json
+│   └── lunarlander_experiment_log_llama33_reasoning_20260424_121532.json
+├── multi_model_runner.py
+├── requirements.txt
+├── .env.example
+└── README.md
+```
